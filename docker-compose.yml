@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  react-native:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-native
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8081:8081"
+    environment:
+      - CI=false
+    command: npm start
